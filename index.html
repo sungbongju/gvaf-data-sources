@@ -115,6 +115,40 @@
     border-top:1px solid #1e293b; color:#64748b}
   .src-grid{display:grid; gap:26px; grid-template-columns:1fr}
   @media(min-width:720px){ .src-grid{grid-template-columns:1fr 1fr} }
+
+  /* EASY explanation box */
+  .easybox{background:#eff6ff; border:1px solid #bfdbfe; border-left:5px solid var(--blue);
+    border-radius:14px; padding:18px 22px; color:#1e3a5f; margin-top:18px; line-height:1.75}
+  .easybox .lab{display:inline-block; font-weight:800; color:var(--blue); font-size:.9rem;
+    letter-spacing:.3px; margin-bottom:6px}
+  .easybox b{color:#0c2d57}
+  /* one-liner inside cards */
+  .oneliner{background:#f1f5f9; border-radius:10px; padding:9px 14px; font-size:.92rem;
+    font-weight:700; color:var(--ink2); margin:12px 0 2px}
+  .oneliner span{color:var(--violet)}
+  /* worked example */
+  .example{display:grid; gap:16px}
+  .exrow{display:flex; gap:18px; align-items:flex-start; background:#fff; border:1px solid var(--line);
+    border-radius:16px; padding:22px 24px; box-shadow:var(--shadow)}
+  .exnum{flex:none; width:42px; height:42px; border-radius:12px; display:grid; place-items:center;
+    font-weight:800; color:#fff; font-size:1.1rem; background:linear-gradient(135deg,var(--blue),var(--violet))}
+  .exbody{flex:1; min-width:0}
+  .exbody h3{margin-bottom:3px}
+  .exbody>p{margin:0 0 12px; color:var(--ink2); font-size:.96rem}
+  .calc{background:#0f172a; color:#e2e8f0; border-radius:12px; padding:14px 18px;
+    font-size:1.04rem; font-weight:700; display:flex; flex-wrap:wrap; gap:6px 10px; align-items:baseline}
+  .calc b{color:#7dd3fc}
+  .calc .hl{color:#a78bfa}
+  .calc .cap{color:#94a3b8; font-weight:600; font-size:.85rem; width:100%; line-height:1.5}
+  .minitable{border-collapse:collapse; font-size:.95rem}
+  .minitable td{padding:5px 18px 5px 0; border:none}
+  .minitable .yr{color:var(--muted); font-weight:700}
+  .minitable .v{font-weight:800; color:var(--ink); font-size:1.05rem}
+  .exresult{background:linear-gradient(135deg,#ecfdf5,#f0fdfa); border:1px solid #99f6e4;
+    border-radius:16px; padding:22px 24px; box-shadow:var(--shadow)}
+  .exresult h3{color:var(--good); margin-bottom:2px}
+  .exresult .seq{font-weight:800; color:var(--ink); font-size:1.05rem; letter-spacing:.2px}
+  .exresult .seq b{color:var(--violet)}
 </style>
 </head>
 <body>
@@ -149,6 +183,12 @@
       ① 시계열 자체가 없고 ② VAR 변수를 세울 수 없으며 ③ 기준연도 <b>수준(level)</b>을 책정할 앵커가 없습니다.
       → 그래서 <b>더 잘게 쪼개진 1차 통계</b>를 직접 조사해 시계열을 합성해야 합니다.
     </div>
+    <div class="easybox">
+      <span class="lab">🗂️ 쉽게 말하면</span><br>
+      반도체는 통계에서 <b>“전자부품”이라는 큰 서랍</b> 안에 디스플레이·회로기판과 함께 섞여 들어가 있습니다.
+      서랍 <b>전체 금액</b>은 알지만, 그 안에서 <b>반도체만 얼마인지</b>는 국민계정이 따로 알려주지 않아요.
+      그래서 서랍을 더 잘게 나눠 보여주는 <b>다른 통계</b>가 필요합니다.
+    </div>
   </div>
 </section>
 
@@ -161,12 +201,20 @@
       <p class="lead">하나는 <b>잘고 빠른 연간 조사</b>, 하나는 <b>정합적이지만 느린 5년 구조표</b>. 둘은 경쟁이 아니라 보완재입니다.</p>
     </div>
 
+    <div class="easybox">
+      <span class="lab">🩺 쉽게 말하면 — 건강검진 비유</span><br>
+      <b>산업연관표</b>는 <b>5년마다 받는 정밀 종합검진</b>이에요. 아주 정확하지만 가끔, 결과도 늦게(약 4년) 나옵니다.
+      <b>광업·제조업조사</b>는 <b>매년 재는 체중계</b>죠. 측정이 좀 거칠어도 자주·빠르게(약 1년) 볼 수 있어요.
+      → 정밀검진으로 <b>기준점</b>을 잡고, 매년 체중계로 <b>그 사이를 메우는</b> 것이 합성의 핵심입니다.
+    </div>
+
     <div class="grid twocol">
       <!-- 광업제조업조사 -->
       <article class="card feature">
         <span class="tag main">★ 신산업 추적의 주력</span>
         <h3 style="margin-top:12px">광업·제조업조사</h3>
         <p class="lead">통계청 작성 · 제조업 구조통계의 기본</p>
+        <div class="oneliner">한 줄 요약: <span>매년 재는 체중계</span> — 자주·잘게 보지만 개념이 거칠다</div>
         <dl class="kv">
           <dt>작성기관</dt><dd><b>통계청</b> (2026년 국가데이터처로 개편)</dd>
           <dt>조사주기</dt><dd><b>매년</b> (연 1회)</dd>
@@ -186,6 +234,7 @@
         <span class="tag cmp">비교 · 구조/prior 공급</span>
         <h3 style="margin-top:12px">산업연관표 (IO)</h3>
         <p class="lead">한국은행 작성 · 산업 간 거래·연쇄 구조</p>
+        <div class="oneliner">한 줄 요약: <span>5년마다 정밀검진</span> — 정확하지만 가끔·늦게</div>
         <dl class="kv">
           <dt>작성기관</dt><dd><b>한국은행</b></dd>
           <dt>작성주기</dt><dd>실측표 <b>5년</b>(끝자리 0·5) + 연장표 매년</dd>
@@ -276,6 +325,60 @@
       <div class="step"><div class="n">4</div><div>
         <h3>활동형 신산업 — 위성계정 정의</h3>
         <p>AI·플랫폼·디지털헬스케어는 통계로 안 잡힘 → <b>위성계정 정의를 착수보고서에 명시</b>하거나 범위에서 제외.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 예시: 반도체 워크스루 -->
+<section class="alt">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">손으로 따라가 보기</span>
+      <h2>예시: 반도체 부가가치를 만들어 보자</h2>
+      <p class="lead">아래 숫자는 <b>설명용 가상 예시</b>(실제 값 아님). 합성이 실제로 어떻게 도는지 감만 잡으면 됩니다.</p>
+    </div>
+
+    <div class="example">
+      <div class="exrow">
+        <div class="exnum">1</div>
+        <div class="exbody">
+          <h3>기준점 잡기 — 산업연관표(2020)</h3>
+          <p>5년마다 나오는 정밀표에서 반도체의 <b>기준연도 수준과 비중</b>을 딱 한 번 확보.</p>
+          <div class="calc">반도체 <b>80조</b> ÷ 부모(전자부품) <b>150조</b> = <span class="hl">비중 53%</span>
+            <span class="cap">← 2020년 “기준 비중” (정밀검진 결과)</span></div>
+        </div>
+      </div>
+
+      <div class="exrow">
+        <div class="exnum">2</div>
+        <div class="exbody">
+          <h3>매년 채우기 — 광업·제조업조사</h3>
+          <p>매년 반도체(<span class="code">C261</span>) 출하액·종사자를 측정해 <b>부모 대비 비중이 어떻게 움직이는지</b> 추적.</p>
+          <table class="minitable"><tbody>
+            <tr><td class="yr">2020</td><td class="yr">2021</td><td class="yr">2022</td><td class="yr">2023</td></tr>
+            <tr><td class="v">53%</td><td class="v">55%</td><td class="v">58%</td><td class="v">54%</td></tr>
+          </tbody></table>
+          <p class="note" style="margin-top:8px">→ 체중계로 매년 잰 “비중의 움직임” (시차 약 1년)</p>
+        </div>
+      </div>
+
+      <div class="exrow">
+        <div class="exnum">3</div>
+        <div class="exbody">
+          <h3>정합 맞추기 — 국민계정 × 비중 (합산제약)</h3>
+          <p>국민계정의 부모 부가가치에 매년 비중을 곱하고, <b>“반도체 + 나머지 = 부모”</b>가 정확히 맞도록 접속.</p>
+          <div class="calc">전자부품 <b>160조</b> × <span class="hl">54%</span> = 반도체 <b>86.4조</b>
+            <span class="cap">합산제약 ✓ &nbsp; 반도체 86.4조 + 나머지 73.6조 = 전자부품 160조 (2023년)</span></div>
+        </div>
+      </div>
+
+      <div class="exresult">
+        <h3>✅ 결과 — VAR에 넣을 반도체 시계열 완성</h3>
+        <p style="margin:6px 0 10px; color:var(--ink2)">없던 데이터가 만들어졌습니다. 이제 이 시계열로 2025–2035 전망이 가능합니다.</p>
+        <div class="seq">반도체 부가가치 → 2020 <b>80조</b> · 2021 <b>83조</b> · 2022 <b>89조</b> · 2023 <b>86조</b> …</div>
+        <p class="note" style="margin-top:12px">단, 광공업조사의 “조사부가가치”는 국민계정과 개념이 달라 <b>3단계 접속에서 보정</b>됩니다.
+          AI·플랫폼처럼 제조가 아닌 신산업은 이 방법이 안 통해 <b>위성계정 정의</b>가 따로 필요합니다.</p>
+      </div>
     </div>
   </div>
 </section>
