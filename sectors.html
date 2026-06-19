@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>광공업 · 서비스업 부문 조사 — 70개 산업 전망의 두 주력 부문 | GVAF</title>
+<meta name="description" content="시나리오별 산업 부가가치 전망(2025–2035)의 두 주력 부문 — 광공업과 서비스업의 구성, 부가가치 비중, 데이터 출처, 신산업 위치, 전망 특성을 제안서 분류 기준으로 종합 정리.">
+<meta property="og:title" content="광공업 · 서비스업 부문 조사 — GVAF">
+<meta property="og:description" content="제조업 ~27% · 서비스업 ~58% — 두 주력 부문의 구성·데이터·신산업·전망 특성 종합">
+<meta property="og:image" content="thumbnail.svg">
+<meta property="og:type" content="article">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏭</text></svg>">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<style>
+  :root{
+    --ink:#0f172a; --ink2:#334155; --muted:#64748b; --line:#e2e8f0;
+    --bg:#f7f9fc; --card:#ffffff;
+    --blue:#2563eb; --cyan:#0891b2; --violet:#7c3aed; --amber:#b45309;
+    --good:#0f766e; --bad:#b91c1c;
+    --navy1:#0b1220; --navy2:#102a43;
+    --radius:18px; --shadow:0 1px 2px rgba(15,23,42,.04),0 12px 32px -12px rgba(15,23,42,.18);
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0; background:var(--bg); color:var(--ink);
+    font-family:'Pretendard','Apple SD Gothic Neo','Malgun Gothic',sans-serif;
+    line-height:1.7; -webkit-font-smoothing:antialiased;}
+  a{color:var(--blue); text-decoration:none} a:hover{text-decoration:underline}
+  .wrap{max-width:1040px; margin:0 auto; padding:0 22px}
+  h2{font-size:clamp(1.5rem,3.2vw,2rem); font-weight:800; letter-spacing:-.5px; margin:0 0 6px}
+  h3{font-size:1.18rem; font-weight:700; margin:0 0 4px}
+  .lead{color:var(--ink2); font-size:1.04rem}
+  .eyebrow{display:inline-block; font-size:.82rem; font-weight:800; letter-spacing:1.5px; color:var(--cyan); text-transform:uppercase}
+
+  header.hero{background:radial-gradient(1200px 500px at 80% -10%,#16335f 0,transparent 60%),
+    linear-gradient(135deg,var(--navy1),var(--navy2));
+    color:#e8eefc; padding:70px 0 60px; position:relative; overflow:hidden; border-bottom:1px solid #0a1830;}
+  header.hero::after{content:""; position:absolute; inset:0;
+    background-image:radial-gradient(circle, rgba(125,211,252,.10) 1.3px, transparent 1.3px);
+    background-size:26px 26px; opacity:.5; pointer-events:none}
+  .hero .eyebrow{color:#7dd3fc}
+  .hero h1{font-size:clamp(2rem,5.5vw,3.2rem); font-weight:800; letter-spacing:-1.5px; margin:14px 0; line-height:1.14}
+  .hero p{font-size:clamp(1rem,2.4vw,1.18rem); color:#cbd5e1; max-width:720px; margin:0}
+  .chips{display:flex; flex-wrap:wrap; gap:10px; margin-top:24px; position:relative; z-index:1}
+  .chip{background:#1e293b8c; border:1px solid #ffffff1f; color:#e2e8f0; padding:8px 16px;
+    border-radius:999px; font-size:.9rem; font-weight:700; backdrop-filter:blur(4px)}
+  .chip b{color:#7dd3fc}
+
+  section{padding:50px 0}
+  section.alt{background:linear-gradient(180deg,#fff,#fbfdff); border-block:1px solid var(--line)}
+  .sec-head{margin-bottom:24px}
+
+  .callout{background:#eff6ff; border:1px solid #bfdbfe; border-left:5px solid var(--blue);
+    border-radius:14px; padding:18px 22px; color:#1e3a5f}
+  .callout b{color:#0c2d57}
+
+  .grid{display:grid; gap:22px}
+  .twocol{display:grid; gap:22px}
+  @media(min-width:820px){ .twocol{grid-template-columns:1fr 1fr} }
+  .card{background:var(--card); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow); padding:26px}
+  .sector{border-top:4px solid var(--line)}
+  .sector.mfg{border-top-color:var(--blue)}
+  .sector.svc{border-top-color:var(--violet)}
+  .tag{display:inline-flex; align-items:center; gap:6px; font-size:.76rem; font-weight:800; padding:4px 11px; border-radius:999px; letter-spacing:.3px}
+  .tag.b{background:#dbeafe; color:#1d4ed8}
+  .tag.v{background:#ede9fe; color:#6d28d9}
+  .kv{display:grid; grid-template-columns:120px 1fr; gap:8px 16px; margin-top:14px; font-size:.95rem}
+  .kv dt{color:var(--muted); font-weight:700}
+  .kv dd{margin:0; color:var(--ink2)} .kv dd b{color:var(--ink)}
+
+  /* share bars */
+  .shares{display:grid; gap:9px; margin:16px 0 4px}
+  .srow{display:grid; grid-template-columns:118px 1fr 52px; align-items:center; gap:12px; font-size:.92rem}
+  .srow .nm{font-weight:700; color:var(--ink2)}
+  .srow .track{background:#eef2f7; border-radius:7px; height:20px; overflow:hidden}
+  .srow .fill{height:100%; border-radius:7px; background:linear-gradient(90deg,var(--blue),var(--cyan))}
+  .srow .fill.svc{background:linear-gradient(90deg,var(--violet),#a78bfa)}
+  .srow .fill.sm{background:#94a3b8}
+  .srow .pct{font-weight:800; text-align:right; color:var(--ink)}
+
+  .tablewrap{overflow-x:auto; border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow)}
+  table{border-collapse:collapse; width:100%; min-width:680px; background:#fff; font-size:.93rem}
+  th,td{padding:12px 15px; text-align:left; border-bottom:1px solid var(--line); vertical-align:top}
+  thead th{background:#f1f5f9; font-weight:800; color:var(--ink)}
+  tbody tr:last-child td{border-bottom:none}
+  td.mk{font-weight:700; white-space:nowrap}
+  tr.total td{background:#f8fafc; font-weight:800}
+  .pill{display:inline-block; font-size:.78rem; font-weight:800; padding:2px 9px; border-radius:8px}
+  .pill.y{background:#dcfce7; color:#166534}
+  .pill.p{background:#fef9c3; color:#854d0e}
+  .pill.n{background:#fee2e2; color:#991b1b}
+  .pill.b{background:#dbeafe; color:#1d4ed8}
+  .pill.v{background:#ede9fe; color:#6d28d9}
+  .code{font-family:ui-monospace,Consolas,monospace; font-size:.85rem; background:#f1f5f9; padding:1px 7px; border-radius:6px}
+  .note{font-size:.86rem; color:var(--muted); margin-top:12px}
+  .flow{display:grid; gap:14px}
+  .step{display:flex; gap:16px; align-items:flex-start; background:#fff; border:1px solid var(--line); border-radius:14px; padding:18px 20px; box-shadow:var(--shadow)}
+  .step .n{flex:none; width:38px; height:38px; border-radius:11px; display:grid; place-items:center; font-weight:800; color:#fff; background:linear-gradient(135deg,var(--blue),var(--violet))}
+  .step p{margin:0; color:var(--ink2); font-size:.95rem}
+
+  .nav{display:flex; gap:10px; flex-wrap:wrap; margin-top:8px}
+  .nav a{background:#ffffff14; border:1px solid #ffffff2e; color:#e2e8f0; border-radius:999px; padding:7px 15px; font-weight:700; font-size:.88rem}
+  .nav a:hover{background:#ffffff26; text-decoration:none}
+
+  footer{background:var(--navy1); color:#94a3b8; padding:42px 0 52px; font-size:.9rem}
+  footer h3{color:#e2e8f0; font-size:1rem; margin-bottom:10px}
+  footer a{color:#7dd3fc; word-break:break-all}
+  footer ul{margin:0; padding-left:18px} footer li{margin:5px 0}
+  .meta{display:flex; flex-wrap:wrap; gap:8px 22px; margin-top:22px; padding-top:18px; border-top:1px solid #1e293b; color:#64748b}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="eyebrow">GVAF · 시나리오별 산업 부가가치 전망 2025–2035</span>
+    <h1>광공업 · 서비스업 부문 조사</h1>
+    <p>본 연구가 전망하는 <b style="color:#e8eefc">약 70개 산업</b>의 두 주력 부문.
+       제안서 분류를 기준으로 각 부문의 <b style="color:#e8eefc">구성 · 부가가치 비중 · 데이터 출처 · 신산업 위치 · 전망 특성</b>을 종합한다.</p>
+    <div class="chips">
+      <span class="chip">🏭 제조업 <b>~27%</b></span>
+      <span class="chip">🏪 서비스업 <b>~58%</b></span>
+      <span class="chip">두 부문 합 <b>~85%</b></span>
+      <span class="chip">제안서 분류 기준</span>
+    </div>
+    <div class="nav">
+      <a href="index.html">📊 통계 정보원 정리</a>
+      <a href="#mfg">🏭 광공업</a>
+      <a href="#svc">🏪 서비스업</a>
+      <a href="#compare">⚖️ 비교</a>
+      <a href="#forecast">🎯 전망 함의</a>
+    </div>
+  </div>
+</header>
+
+<!-- 개요 -->
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">출발점 — 제안서의 산업 분류</span>
+      <h2>5대 대분류 위의 약 70개 산업</h2>
+      <p class="lead">제안서는 한국고용정보원의 5대 대분류 위에서 62개 중분류를 약 70개로 확장해 전망한다. 그중 <b>광공업(광업+제조업)과 서비스업이 부가가치의 약 85%</b>를 차지하는 무게중심이다.</p>
+    </div>
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th>대분류</th><th>중분류 수 (제안서)</th><th>부가가치 비중*</th><th>주력 연간 데이터</th><th>신산업 후보</th></tr></thead>
+        <tbody>
+          <tr><td class="mk">농림어업</td><td>3</td><td>~1.6%</td><td>국민계정·농림어업조사</td><td>—</td></tr>
+          <tr><td class="mk">광업</td><td>2</td><td>~0.1%</td><td>광업·제조업조사</td><td>—</td></tr>
+          <tr><td class="mk" style="color:var(--blue)">제조업</td><td>23 → 25~28</td><td><b>~27%</b></td><td>광업·제조업조사</td><td>반도체·이차전지·바이오의약</td></tr>
+          <tr><td class="mk">사회간접자본</td><td>3 → 3~4</td><td>~8%</td><td>국민계정·건설업조사</td><td>신재생에너지</td></tr>
+          <tr><td class="mk" style="color:var(--violet)">서비스업</td><td>31 → 32~34</td><td><b>~58%</b></td><td>서비스업조사</td><td>AI·플랫폼·콘텐츠·디지털헬스케어</td></tr>
+          <tr class="total"><td>합계</td><td>62 → 약 70</td><td>~100%</td><td>—</td><td>최대 7개</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note">* 명목 부가가치(경제활동별), 2023년 근사. 기준(GDP 시장가격 vs 총부가가치)·분류에 따라 ±수치 차이. 비중 합은 반올림으로 100% 부근.</p>
+  </div>
+</section>
+
+<!-- 광공업 -->
+<section class="alt" id="mfg">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">부문 ①</span>
+      <h2>🏭 광공업 (광업 + 제조업)</h2>
+      <p class="lead">한국 수출과 성장을 이끄는 <b>자본집약 부문</b>. 신산업의 ‘공장형’이 모두 여기에 속한다.</p>
+    </div>
+
+    <div class="shares card">
+      <h3 style="margin-bottom:10px">제조업 내 주요 중분류 (부가가치 상대 규모, 개략)</h3>
+      <div class="srow"><span class="nm">전자·영상·통신</span><span class="track"><span class="fill" style="width:100%"></span></span><span class="pct">최대</span></div>
+      <div class="srow"><span class="nm">화학·석유화학</span><span class="track"><span class="fill" style="width:62%"></span></span><span class="pct">큼</span></div>
+      <div class="srow"><span class="nm">자동차·운송장비</span><span class="track"><span class="fill" style="width:55%"></span></span><span class="pct">큼</span></div>
+      <div class="srow"><span class="nm">1차금속(철강)</span><span class="track"><span class="fill" style="width:40%"></span></span><span class="pct">중</span></div>
+      <div class="srow"><span class="nm">기계장비</span><span class="track"><span class="fill" style="width:36%"></span></span><span class="pct">중</span></div>
+      <div class="srow"><span class="nm">음식료품</span><span class="track"><span class="fill" style="width:28%"></span></span><span class="pct">중</span></div>
+      <p class="note">‘전자·영상·통신’ 안에 <b>반도체·디스플레이</b>가 묶여 있다 — 신산업 분리의 핵심 지점.</p>
+    </div>
+
+    <div class="grid twocol" style="margin-top:22px">
+      <article class="card sector mfg">
+        <span class="tag b">구성 · 데이터</span>
+        <dl class="kv">
+          <dt>정의</dt><dd>KSIC <span class="code">B</span>광업 + <span class="code">C</span>제조업</dd>
+          <dt>부가가치 비중</dt><dd>제조 <b>~27%</b> · 광업 ~0.1% (OECD 최상위 제조 비중)</dd>
+          <dt>제안서 분류</dt><dd>제조 <b>23 → 25~28</b> 중분류 · 광업 2</dd>
+          <dt>요소집약</dt><dd><b>자본집약</b> · 수출주도 · 글로벌 경기 민감</dd>
+          <dt>핵심 데이터</dt><dd>국민계정(연 1990~2024·분기) · 산업연관표(기본부문 380) · <b>광업·제조업조사</b>(세세분류 1,205·매년·10인↑ 전수)</dd>
+        </dl>
+      </article>
+      <article class="card sector mfg">
+        <span class="tag b">신산업 · 전망 특성</span>
+        <dl class="kv">
+          <dt>신산업</dt><dd>반도체 <span class="code">C261</span> · 이차전지 <span class="code">C282</span> · 바이오의약 <span class="code">C21</span></dd>
+          <dt>책정 가능성</dt><dd><span class="pill y">추적 가능</span> 제조형 → 광업·제조업조사·산업연관표 기본부문에서 분리 가능</dd>
+          <dt>시나리오</dt><dd><b>S4 기술도약</b>의 주 무대 — 세계 GDP·환율·TFP 외생변수에 민감</dd>
+          <dt>노동공급</dt><dd>자본집약이라 S2/S3 노동공급 시나리오 차이는 <b>상대적으로 작음</b></dd>
+        </dl>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- 서비스업 -->
+<section id="svc">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">부문 ②</span>
+      <h2>🏪 서비스업</h2>
+      <p class="lead">부가가치의 <b>약 58%</b>를 차지하는 최대 부문. <b>노동집약</b>이라 노동공급 시나리오에 가장 민감하며, ‘서비스형’ 신산업이 여기 속한다.</p>
+    </div>
+
+    <div class="shares card">
+      <h3 style="margin-bottom:10px">서비스업 내 주요 중분류 (부가가치 상대 규모, 개략)</h3>
+      <div class="srow"><span class="nm">부동산</span><span class="track"><span class="fill svc" style="width:88%"></span></span><span class="pct">큼</span></div>
+      <div class="srow"><span class="nm">도소매</span><span class="track"><span class="fill svc" style="width:84%"></span></span><span class="pct">큼</span></div>
+      <div class="srow"><span class="nm">공공행정·국방</span><span class="track"><span class="fill svc" style="width:74%"></span></span><span class="pct">큼</span></div>
+      <div class="srow"><span class="nm">정보통신</span><span class="track"><span class="fill svc" style="width:62%"></span></span><span class="pct">중</span></div>
+      <div class="srow"><span class="nm">금융·보험</span><span class="track"><span class="fill svc" style="width:60%"></span></span><span class="pct">중</span></div>
+      <div class="srow"><span class="nm">보건·복지</span><span class="track"><span class="fill svc" style="width:58%"></span></span><span class="pct">중·↑</span></div>
+      <div class="srow"><span class="nm">전문·과학·기술</span><span class="track"><span class="fill svc" style="width:50%"></span></span><span class="pct">중</span></div>
+      <p class="note">‘정보통신(J)’ 안에 출판·게임·영상·방송·정보서비스가 묶여 있다 — <b>콘텐츠·플랫폼</b> 신산업의 거처.</p>
+    </div>
+
+    <div class="grid twocol" style="margin-top:22px">
+      <article class="card sector svc">
+        <span class="tag v">구성 · 데이터</span>
+        <dl class="kv">
+          <dt>정의</dt><dd>KSIC <span class="code">G</span>~<span class="code">S</span> (도소매~기타서비스)</dd>
+          <dt>부가가치 비중</dt><dd><b>~58%</b> (최대 부문, 선진국형 구조)</dd>
+          <dt>제안서 분류</dt><dd><b>31 → 32~34</b> 중분류</dd>
+          <dt>요소집약</dt><dd><b>노동집약</b> · 인구구조 전환의 직접 타격 부문</dd>
+          <dt>핵심 데이터</dt><dd>국민계정 · 산업연관표 · <b>서비스업조사</b>(약 25만 사업체·매년·11개 대분류) · 콘텐츠산업조사 등 특수조사</dd>
+        </dl>
+      </article>
+      <article class="card sector svc">
+        <span class="tag v">신산업 · 전망 특성</span>
+        <dl class="kv">
+          <dt>신산업</dt><dd>콘텐츠(J <span class="code">58~60</span>) · 디지털플랫폼 · 디지털헬스케어</dd>
+          <dt>책정 가능성</dt><dd><span class="pill p">부분</span> 서비스업조사로 일부 포착 · <span class="pill n">AI·플랫폼 미식별</span> (위성계정 정의 필요)</dd>
+          <dt>시나리오</dt><dd><b>S2/S3 노동공급</b> 차이가 크게 갈리는 부문 — <b>추가 필요 인력</b> 산출의 핵심 입력</dd>
+          <dt>RFP 연결</dt><dd>노동공급 두 상태 비교(필수 요구)의 효과가 가장 크게 나타남</dd>
+        </dl>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- 비교 -->
+<section class="alt" id="compare">
+  <div class="wrap">
+    <div class="sec-head"><span class="eyebrow">한눈에 비교</span><h2>⚖️ 광공업 vs 서비스업</h2></div>
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th>항목</th><th>🏭 광공업</th><th>🏪 서비스업</th></tr></thead>
+        <tbody>
+          <tr><td class="mk">부가가치 비중</td><td>~27%</td><td><b>~58%</b></td></tr>
+          <tr><td class="mk">중분류(제안서)</td><td>25 → ~27</td><td>31 → ~34</td></tr>
+          <tr><td class="mk">요소집약도</td><td><span class="pill b">자본집약</span></td><td><span class="pill v">노동집약</span></td></tr>
+          <tr><td class="mk">주력 연간조사</td><td>광업·제조업조사</td><td>서비스업조사</td></tr>
+          <tr><td class="mk">조사 해상도</td><td>세세분류 1,205</td><td>11 대분류·세세분류</td></tr>
+          <tr><td class="mk">신산업 책정</td><td><span class="pill y">추적 가능</span></td><td><span class="pill p">부분</span> / <span class="pill n">AI·플랫폼 난</span></td></tr>
+          <tr><td class="mk">전망 민감도</td><td>세계GDP·환율·TFP</td><td>노동공급(인구)</td></tr>
+          <tr><td class="mk">핵심 시나리오</td><td>S4 기술도약</td><td>S2/S3 노동공급</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note">두 부문이 시나리오에서 <b>반대 축</b>에 민감하다는 점이 핵심: 제조는 외부환경(S4), 서비스는 노동공급(S2·S3). 그래서 두 부문을 함께 봐야 4개 시나리오가 의미를 가진다.</p>
+  </div>
+</section>
+
+<!-- 신산업 분포 -->
+<section>
+  <div class="wrap">
+    <div class="sec-head"><span class="eyebrow">신산업 7개 후보</span><h2>어느 부문에 속하고, 어디서 잡히나</h2></div>
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th>신산업</th><th>부문</th><th>KSIC 예시</th><th>광공업조사</th><th>서비스업조사</th><th>산업연관표</th></tr></thead>
+        <tbody>
+          <tr><td class="mk">반도체</td><td><span class="pill b">광공업</span></td><td><span class="code">C261</span></td><td><span class="pill y">○</span></td><td>—</td><td><span class="pill y">기본부문 ○</span></td></tr>
+          <tr><td class="mk">이차전지</td><td><span class="pill b">광공업</span></td><td><span class="code">C282</span></td><td><span class="pill y">○</span></td><td>—</td><td><span class="pill y">○</span></td></tr>
+          <tr><td class="mk">바이오의약</td><td><span class="pill b">광공업</span></td><td><span class="code">C21</span></td><td><span class="pill y">○</span></td><td>—</td><td><span class="pill y">○</span></td></tr>
+          <tr><td class="mk">신재생에너지</td><td>SOC</td><td><span class="code">D351</span> 외</td><td><span class="pill p">부분</span></td><td>—</td><td><span class="pill p">부분</span></td></tr>
+          <tr><td class="mk">콘텐츠</td><td><span class="pill v">서비스</span></td><td>J <span class="code">58~60</span></td><td><span class="pill n">×</span></td><td><span class="pill p">부분</span></td><td><span class="pill p">부분</span></td></tr>
+          <tr><td class="mk">디지털플랫폼</td><td><span class="pill v">서비스</span></td><td>J·G 횡단</td><td><span class="pill n">×</span></td><td><span class="pill p">부분</span></td><td><span class="pill n">미식별</span></td></tr>
+          <tr><td class="mk">디지털헬스케어</td><td><span class="pill v">서비스</span></td><td>Q·J 횡단</td><td><span class="pill n">×</span></td><td><span class="pill p">부분</span></td><td><span class="pill n">미식별</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note">제조형 3종은 책정 가능, 서비스형은 부분 포착. <b>AI·디지털플랫폼</b>은 어느 통계에도 단일 부문으로 없어 위성계정 정의가 필요 — 가장 어려운 숙제.</p>
+  </div>
+</section>
+
+<!-- 전망 함의 -->
+<section class="alt" id="forecast">
+  <div class="wrap">
+    <div class="sec-head"><span class="eyebrow">우리 연구에 주는 함의</span><h2>🎯 전망 모형에서 무엇을 뜻하나</h2></div>
+    <div class="flow">
+      <div class="step"><div class="n">1</div><div>
+        <h3>노동집약 서비스업 → 노동공급 시나리오의 핵심</h3>
+        <p>S2(공급제약)와 S3(완화)의 부가가치 차이가 서비스업에서 크게 나타나며, 이 차이가 <b>산업별 추가 필요 인력</b>(RFP 필수 산출)의 직접 입력이 된다.</p></div></div>
+      <div class="step"><div class="n">2</div><div>
+        <h3>자본집약 제조업 → 외생변수·기술 시나리오의 핵심</h3>
+        <p>제조업은 세계 GDP·환율·TFP에 민감해 <b>S4 기술도약</b>의 효과가 집중된다. 노동공급보다 외부환경 축이 전망을 좌우한다.</p></div></div>
+      <div class="step"><div class="n">3</div><div>
+        <h3>신산업 데이터 공백 → 합성 전략</h3>
+        <p>제조형은 산업연관표(수준 앵커)+광업·제조업조사(연간 지표)+Chow-Lin 접속으로 합성. 서비스형(특히 AI·플랫폼)은 위성계정 정의가 추가로 필요.</p></div></div>
+      <div class="step"><div class="n">4</div><div>
+        <h3>부문 부가가치 합 → GDP 정합</h3>
+        <p>70개 산업 합은 <b>명목</b>이면 순생산물세를 더해 GDP와 일치하지만, <b>실질(연쇄가중)</b>이면 잔차가 남는다. 명목 합산 후 디플레이터로 실질화하는 경로가 정합적.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="grid" style="grid-template-columns:1fr; gap:24px">
+      <div>
+        <h3>출처</h3>
+        <ul>
+          <li>제안서 「시나리오별 경제성장 및 산업별 실질부가가치 전망(2025~2035) 연구」 — 산업 분류(62→약70), 신산업 후보, 시나리오 설계</li>
+          <li><a href="https://www.index.go.kr/unity/potal/main/EachDtlPageDetail.do?idx_cd=2736">한국은행 국민계정 — 경제활동별 부가가치 비중(2023)</a></li>
+          <li><a href="https://eiec.kdi.re.kr/policy/materialView.do?num=250896">한국은행 「2020년 기준년 산업연관표」</a> · <a href="https://mods.go.kr/statDesc.es?act=view&mid=a10501010000&sttr_cd=S006001">통계청 광업·제조업조사</a> · 통계청 서비스업조사</li>
+        </ul>
+      </div>
+    </div>
+    <div class="meta">
+      <span><b style="color:#cbd5e1">GVAF</b> · 광공업·서비스업 부문 조사</span>
+      <span>작성 2026-06-19</span>
+      <span><a href="index.html">← 통계 정보원 정리로</a></span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
