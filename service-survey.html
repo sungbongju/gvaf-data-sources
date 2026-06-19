@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>서비스업조사, 초등학생도 아는 쉬운 설명</title>
+<meta name="description" content="서비스업조사가 무엇인지, 무엇을 물어보는지, 얼마나 자세하고 얼마나 자주 나오는지, 새 산업과 무슨 상관인지 초등학생도 이해할 수 있게 그림으로 설명합니다.">
+<meta property="og:title" content="서비스업조사, 쉽게 알아봐요!">
+<meta property="og:description" content="가게·회사한테 '장사 잘 됐어요?' 매년 물어보는 조사 — 약 25만 개 사업체 · 매년 · 콘텐츠·플랫폼·헬스케어를 잡아줘요">
+<meta property="og:image" content="https://sungbongju.github.io/gvaf-data-sources/service-survey-thumb.svg">
+<meta property="twitter:image" content="https://sungbongju.github.io/gvaf-data-sources/service-survey-thumb.svg">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="og:type" content="article">
+<style>
+  :root{
+    --orange:#ff8a3d; --pink:#ff5fa2; --ink:#33302e; --soft:#7a736e;
+    --cream:#fff7ee; --card:#ffffff; --line:#f0e3d6;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0; background:linear-gradient(160deg,#fff4e0,#ffe6ef 60%,#f3ecff);
+    color:var(--ink);
+    font-family:'Apple SD Gothic Neo','Malgun Gothic','Noto Sans KR',sans-serif;
+    line-height:1.7; -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:860px; margin:0 auto; padding:24px 20px 80px}
+  .thumb{display:block; width:100%; height:auto; border-radius:24px;
+    box-shadow:0 14px 40px rgba(0,0,0,.14); margin:8px 0 8px}
+  .thumb-cap{text-align:center; color:var(--soft); font-size:.85rem; margin:6px 0 28px}
+  h1{font-size:2rem; font-weight:800; margin:10px 0 6px; line-height:1.3}
+  .lead{font-size:1.1rem; color:var(--soft); margin:0 0 8px}
+  .card{background:var(--card); border-radius:22px; padding:24px 24px 26px;
+    margin:20px 0; box-shadow:0 8px 24px rgba(150,90,40,.08); border:1px solid var(--line)}
+  .card h2{display:flex; align-items:center; gap:10px; font-size:1.4rem; margin:0 0 12px}
+  .emoji{font-size:1.6rem}
+  .card p{margin:.5em 0}
+  .big{font-weight:800; color:var(--pink)}
+  .pill{display:inline-block; background:#fff1e0; color:#d9711f; font-weight:700;
+    border-radius:999px; padding:3px 12px; font-size:.9rem; margin:2px 2px}
+  .analogy{background:linear-gradient(135deg,#fff6e8,#ffeef5); border:1px dashed #ffc59b;
+    border-radius:16px; padding:16px 18px; margin:12px 0; font-size:1.02rem}
+  .analogy b{color:var(--orange)}
+
+  /* category chips */
+  .chips{display:flex; flex-wrap:wrap; gap:8px; justify-content:center; margin:16px 0}
+  .chip{background:#fff1e0; border:1px solid #ffd6a8; border-radius:14px;
+    padding:10px 14px; font-weight:700; color:#a85a1f; font-size:1rem}
+  .chip span{font-size:1.2rem; margin-right:4px}
+
+  /* ask list */
+  ul.clean{margin:.4em 0; padding-left:1.2em}
+  ul.clean li{margin:.45em 0}
+
+  /* frequency calendar */
+  .freq{display:flex; gap:8px; flex-wrap:wrap; justify-content:center; margin:14px 0}
+  .yr{border-radius:14px; padding:12px 10px; text-align:center; min-width:92px; font-weight:700}
+  .yr small{display:block; font-weight:600; font-size:.78rem; opacity:.85}
+  .yr.real{background:#ff5fa2; color:#fff}
+  .yr.ext{background:#fff1e0; color:#b5701f; border:1px solid #ffd6a8}
+
+  /* vs row */
+  .vs{display:flex; gap:12px; align-items:stretch; margin:14px 0; flex-wrap:wrap}
+  .vs .box{flex:1; min-width:220px; border-radius:16px; padding:16px 18px; border:1px solid var(--line)}
+  .vs .b-fac{background:#eef4ff; border-color:#cfe0ff}
+  .vs .b-svc{background:#fff0f6; border-color:#ffc8de}
+  .vs .box h3{margin:0 0 6px; font-size:1.1rem; display:flex; align-items:center; gap:8px}
+
+  .why-row{display:flex; gap:14px; align-items:flex-start; margin:12px 0}
+  .why-ico{font-size:1.8rem; line-height:1}
+  .connect{background:linear-gradient(135deg,#ede7ff,#ffe9f3); border:1px solid #d9ccff}
+  .nav{display:flex; gap:8px; flex-wrap:wrap; margin:0 0 12px}
+  .nav a{background:#ffffffaa; border:1px solid var(--line); border-radius:999px;
+    padding:6px 14px; font-weight:700; color:#a85a1f; text-decoration:none; font-size:.92rem}
+  .nav a:hover{background:#fff1e0}
+  footer{text-align:center; color:var(--soft); font-size:.85rem; margin-top:30px}
+  .src{font-size:.8rem; color:var(--soft); margin-top:6px}
+  @media(max-width:520px){ h1{font-size:1.6rem} }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- ===== 섬네일 ===== -->
+  <img class="thumb" alt="서비스업조사 쉽게 알아보기 섬네일" src="service-survey-thumb.svg">
+  <div class="thumb-cap">▲ 이 글의 섬네일 — 가게·회사한테 “장사 잘 됐어요?” 매년 물어보는 조사</div>
+
+  <h1>🏪 서비스업조사가 도대체 뭐예요?</h1>
+  <p class="lead">초등학생도 알 수 있게, 그림으로 천천히 설명할게요.</p>
+
+  <!-- 1. 무엇인가 -->
+  <div class="card">
+    <h2><span class="emoji">🗣️</span> 한마디로, “가게한테 물어보는 조사”예요</h2>
+    <p>세상에는 물건을 만드는 <b>공장</b>도 있지만,
+      식당·미용실·학원·병원·게임회사처럼 <b>서비스를 파는 곳</b>이 훨씬 많아요.</p>
+    <div class="analogy">
+      🚶 조사원이 동네를 다니며 가게마다 물어봐요 —
+      “올해 <b>장사 잘 됐어요?</b> 손님은 얼마나 받았고, 일하는 사람은 몇 명이에요?”
+    </div>
+    <p>이렇게 <span class="big">“서비스 가게·회사들이 1년 동안 얼마나 벌었는지”</span>를
+      나라 전체에 대해 모아 놓은 것이 <b>서비스업조사</b>예요.
+      우리나라에서는 <b>통계청(지금은 국가데이터처)</b>이 해요.</p>
+  </div>
+
+  <!-- 2. 무엇을 묻나 -->
+  <div class="card">
+    <h2><span class="emoji">📋</span> 무엇을 물어봐요?</h2>
+    <ul class="clean">
+      <li>🏪 <b>가게 이름과 종류</b> (무슨 장사를 하나요?)</li>
+      <li>👥 <b>일하는 사람 수</b>와 월급</li>
+      <li>💰 <b>1년 동안 번 돈</b> (매출액 = 판 돈)</li>
+      <li>🧾 <b>장사하며 쓴 돈</b> (영업비용)</li>
+    </ul>
+    <p>번 돈에서 쓴 돈을 빼면, 그 가게가 <span class="big">새로 만든 돈(부가가치)</span>도 알 수 있어요.
+      바로 이 “새로 만든 돈”이 우리 연구가 찾는 보물이에요. 💎</p>
+  </div>
+
+  <!-- 3. 어떤 곳을, 얼마나 자세히 -->
+  <div class="card">
+    <h2><span class="emoji">🔍</span> 어떤 곳을, 얼마나 자세히 물어봐요?</h2>
+    <p>서비스라면 거의 다 물어봐요! 크게 <b>11가지 종류</b>의 가게·회사예요.</p>
+    <div class="chips">
+      <div class="chip"><span>🛒</span>마트·상점</div>
+      <div class="chip"><span>🍽️</span>식당·숙박</div>
+      <div class="chip"><span>🎬</span>영상·게임·출판</div>
+      <div class="chip"><span>🏢</span>부동산</div>
+      <div class="chip"><span>🔬</span>전문·과학·기술</div>
+      <div class="chip"><span>🧹</span>사업지원</div>
+      <div class="chip"><span>🏫</span>학원·교육</div>
+      <div class="chip"><span>🏥</span>병원·복지</div>
+      <div class="chip"><span>🎨</span>예술·스포츠</div>
+      <div class="chip"><span>💇</span>미용·수리</div>
+      <div class="chip"><span>♻️</span>환경·재활용</div>
+    </div>
+    <p>전국에서 무려 <span class="big">약 25만 개</span> 가게·회사한테 물어봐요.
+      그리고 아주 잘게 쪼개서 봐요 — <b>게임 회사</b>와 <b>영화 회사</b>를 따로,
+      <b>한식당</b>과 <b>카페</b>를 따로 셀 수 있을 만큼요. 🧱</p>
+    <p><span class="pill">큰 가게는 빠짐없이 전부</span>
+      <span class="pill">작은 가게는 일부만 뽑아서</span>
+      (종사자 50명 또는 매출 100억이 그 기준선이에요.)</p>
+  </div>
+
+  <!-- 4. 얼마나 자주 -->
+  <div class="card">
+    <h2><span class="emoji">📅</span> 얼마나 자주 나와요?</h2>
+    <p>좋은 소식! <span class="big">매년</span> 물어봐요. 그래서 빠르게 따라갈 수 있어요.</p>
+    <ul class="clean">
+      <li><b>매년 조사</b> — 해마다 서비스 가게들한테 물어봐요.</li>
+      <li><b>5년마다 대청소(경제총조사)</b> — 끝자리가 0·5인 해엔 작은 가게까지 <span class="big">하나도 빠짐없이</span> 다 조사해요.</li>
+    </ul>
+    <div class="freq">
+      <div class="yr real">2020<small>전부조사 ★</small></div>
+      <div class="yr ext">2021<small>매년</small></div>
+      <div class="yr ext">2022<small>매년</small></div>
+      <div class="yr ext">2023<small>매년</small></div>
+      <div class="yr ext">2024<small>매년</small></div>
+      <div class="yr real">2025<small>전부조사 ★</small></div>
+    </div>
+    <p>발표는 <b>한 해쯤 뒤에</b> 나와요. 작년에 장사한 걸 모아서 올해 알려주는,
+      <b>“작년 장사 결산”</b> 같은 거예요. 📸 (산업연관표가 4년 늦는 것보단 훨씬 빨라요!)</p>
+  </div>
+
+  <!-- 5. 광공업조사와의 차이 -->
+  <div class="card">
+    <h2><span class="emoji">🤝</span> ‘광공업조사’랑 뭐가 달라요?</h2>
+    <p>둘은 <b>짝꿍</b>이에요. 한 명은 공장 담당, 한 명은 가게 담당!</p>
+    <div class="vs">
+      <div class="box b-fac">
+        <h3>🏭 광공업조사</h3>
+        <p>물건을 <b>만드는 공장</b>을 물어봐요. (반도체·자동차·전지 공장 등)</p>
+      </div>
+      <div class="box b-svc">
+        <h3>🏪 서비스업조사</h3>
+        <p>서비스를 <b>파는 가게·회사</b>를 물어봐요. (게임·영화·병원·학원 등)</p>
+      </div>
+    </div>
+    <p>이 둘을 합쳐야 나라 경제가 <b>빠짐없이</b> 보여요.
+      공장만 봐도, 가게만 봐도 반쪽이거든요. 🧩</p>
+  </div>
+
+  <!-- 6. 우리 연구와의 연결 -->
+  <div class="card connect">
+    <h2><span class="emoji">🧠</span> 그래서 ‘서비스형 새 산업’의 정보원이에요</h2>
+    <p>우리 연구는 <b>새로 뜨는 산업</b>의 미래 부가가치도 전망해요.
+      그런데 새 산업은 두 종류로 나뉘어요.</p>
+    <ul class="clean">
+      <li>🏭 <b>공장형</b> (반도체·이차전지·바이오의약) → <b>광공업조사</b>가 잡아줘요.</li>
+      <li>🏪 <b>서비스형</b> (콘텐츠·게임·디지털플랫폼·디지털헬스케어) → <b>서비스업조사</b>가 잡아줘요!</li>
+    </ul>
+    <p class="analogy">🎮 게임 회사는 <b>공장이 없지만</b> 분명히 큰 산업이에요.
+      서비스업조사가 그 회사들의 <b>매출과 사람 수</b>를 세어 주니까,
+      “공장에 안 잡히는” 새 산업도 숫자로 만들 수 있어요.</p>
+    <p>다만 솔직한 숙제 하나! <b>AI·디지털플랫폼</b>은 아직 딱 떨어지는 칸이 없어서
+      여러 가게 종류에 <b>흩어져</b> 있어요. 그래서 이 부분은 따로 모아 정의해 주는
+      <b>추가 작업</b>이 필요해요. 🔧</p>
+  </div>
+
+  <div class="nav" style="margin-top:18px">
+    <a href="index.html">📊 통계 정보원 한눈에 보기</a>
+    <a href="https://sdkparkforbi.github.io/va-forecast/">🧩 산업연관표 쉬운 설명</a>
+  </div>
+
+  <footer>
+    <div><b>서비스업조사</b> · 작성기관: 통계청(국가데이터처) · 매년 작성 · 약 25만 개 사업체</div>
+    <div class="src">자료: 통계청 「서비스업조사」(KSIC 11개 대분류 E·G·I·J·L·M·N·P·Q·R·S, 전수경계점 종사자 50인 또는 매출 100억) /
+      「경제총조사」(5년 주기, 끝자리 0·5년) / 「콘텐츠산업조사」 등. 교육용으로 쉽게 풀어 쓴 설명입니다.</div>
+  </footer>
+
+</div>
+</body>
+</html>
