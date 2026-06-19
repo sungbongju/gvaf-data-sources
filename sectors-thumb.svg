@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" font-family="'Pretendard','Apple SD Gothic Neo','Malgun Gothic',sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b1220"/>
+      <stop offset="0.55" stop-color="#0f1e3d"/>
+      <stop offset="1" stop-color="#102a43"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#38bdf8"/>
+      <stop offset="1" stop-color="#818cf8"/>
+    </linearGradient>
+    <linearGradient id="mfg" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#2563eb"/>
+      <stop offset="1" stop-color="#22d3ee"/>
+    </linearGradient>
+    <linearGradient id="svc" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#7c3aed"/>
+      <stop offset="1" stop-color="#a78bfa"/>
+    </linearGradient>
+    <pattern id="dots" width="26" height="26" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.4" fill="#7dd3fc" opacity="0.10"/>
+    </pattern>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#dots)"/>
+  <rect x="0" y="0" width="1200" height="8" fill="url(#accent)"/>
+
+  <!-- eyebrow -->
+  <text x="80" y="104" fill="#7dd3fc" font-size="25" font-weight="700" letter-spacing="2">
+    GVAF · 시나리오별 산업 부가가치 전망 2025–2035
+  </text>
+
+  <!-- title -->
+  <text x="78" y="208" fill="#f8fafc" font-size="82" font-weight="800" letter-spacing="-1">광공업 · 서비스업</text>
+  <text x="78" y="300" fill="#f8fafc" font-size="82" font-weight="800" letter-spacing="-1">부문 조사</text>
+
+  <!-- subtitle -->
+  <text x="80" y="360" fill="#cbd5e1" font-size="31" font-weight="500">70개 산업 전망의 두 주력 부문 — 구성·데이터·신산업·전망</text>
+
+  <!-- stacked value-added bar -->
+  <text x="80" y="424" fill="#94a3b8" font-size="22" font-weight="700">한국 부가가치 구성 (명목, 2023 근사)</text>
+  <g>
+    <!-- 서비스업 58% -->
+    <rect x="80" y="442" width="596" height="86" rx="10" fill="url(#svc)"/>
+    <text x="378" y="488" text-anchor="middle" fill="#ffffff" font-size="30" font-weight="800">🏪 서비스업</text>
+    <text x="378" y="516" text-anchor="middle" fill="#ede9fe" font-size="24" font-weight="700">~58%</text>
+    <!-- 제조업 27% -->
+    <rect x="682" y="442" width="274" height="86" rx="10" fill="url(#mfg)"/>
+    <text x="819" y="488" text-anchor="middle" fill="#ffffff" font-size="28" font-weight="800">🏭 제조업</text>
+    <text x="819" y="516" text-anchor="middle" fill="#cffafe" font-size="24" font-weight="700">~27%</text>
+    <!-- 기타 -->
+    <rect x="962" y="442" width="158" height="86" rx="10" fill="#475569"/>
+    <text x="1041" y="494" text-anchor="middle" fill="#e2e8f0" font-size="24" font-weight="700">기타 ~15%</text>
+  </g>
+
+  <!-- footer chips -->
+  <g font-size="24" font-weight="700">
+    <rect x="80" y="556" width="290" height="50" rx="25" fill="#1e293b" stroke="#334155"/>
+    <text x="108" y="589" fill="#e2e8f0">자본집약 vs 노동집약</text>
+    <rect x="386" y="556" width="300" height="50" rx="25" fill="#1e293b" stroke="#334155"/>
+    <text x="414" y="589" fill="#e2e8f0">신산업 7개 · 데이터 출처</text>
+  </g>
+  <text x="1120" y="591" text-anchor="end" fill="#64748b" font-size="22" font-weight="600">두 부문 합 ~85%</text>
+</svg>
